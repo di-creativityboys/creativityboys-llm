@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+ctransformers
+langchain
+asyncio
+websockets
+python-dotenv

@@ -1,0 +1,5 @@
+screen -L -Logfile ./output.log ./src/main.py &
+
+screen -r
+
+https://hinty.io/rivashchenko/run-python-script-in-background/
