@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  data-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - WS_HOST=0.0.0.0
+      - WS_PORT=5000
