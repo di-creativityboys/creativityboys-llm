@@ -6,6 +6,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
+    volumes:
+      - ./models:/app/models
     ports:
       - "5000:5000"
     environment:
