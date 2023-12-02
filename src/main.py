@@ -53,4 +53,5 @@ async def main():
 
 
 if __name__ == "__main__":
+    printTask("LLM websocket service is starting")
     asyncio.run(main())

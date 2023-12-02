@@ -1,5 +1,10 @@
-.venv
+.vscode
+models
+__pychache__
+venv
+.env
 .gitignore
+docker-compose.yaml
+output.log
 README.md
 todo.txt
-.vscode
