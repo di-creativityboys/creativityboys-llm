@@ -10,11 +10,16 @@ from task_plain import task_plain
 
 load_dotenv()
 
-HOST = os.getenv('WS_HOST') #localhost
+HOST = os.getenv('WS_HOST')  # localhost
 PORT = os.getenv('WS_PORT')
+
 
 async def handler(websocket):
     async for message in websocket:
+        if (message == "ping"):
+            await websocket.send("ping")
+            return
+
         event = json.loads(message)
 
         task = event["task"]
@@ -36,6 +41,7 @@ async def handler(websocket):
             printWarning(str(e))
             await send_message(websocket, task, str(e))
 
+
 async def send_message(websocket, body):
     printTask("message")
 
@@ -45,6 +51,7 @@ async def send_message(websocket, body):
     }
 
     await websocket.send(json.dumps(response))
+
 
 async def main():
     async with websockets.serve(handler, HOST, PORT):
